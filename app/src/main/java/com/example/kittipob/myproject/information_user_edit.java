@@ -42,7 +42,7 @@ public class Information_user_edit extends AppCompatActivity {
         ed_name.setText(user.getName_user());
         ed_age.setText(""+user.getAge_user());
         ed_weight.setText(""+user.getWeight_user());
-        
+
 
 
 
