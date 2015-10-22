@@ -1,16 +1,13 @@
 package com.example.kittipob.myproject;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements WebServiceCallbac
         box_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,information_user.class);
+                Intent intent = new Intent(MainActivity.this,Information_user.class);
                 startActivity(intent);
 
             }

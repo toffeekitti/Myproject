@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.kittipob.myproject.models.FoodModel;
 import com.example.kittipob.myproject.models.OrderModel;
+import com.example.kittipob.myproject.models.UserModel;
 
 import java.util.List;
 
@@ -99,6 +100,39 @@ public class DatabaseManager  {
         order.setAmFood(amFood);
         order.setTotalCat(totalCat);
         order.setReport_id(report_id);
+
+        realm.commitTransaction();
+
+    }
+
+    public List<UserModel> getUsers() {
+        return Realm.getInstance(context)
+                .where(UserModel.class)
+                .findAll();
+    }
+
+    public UserModel getUser(final int id) {
+        return Realm.getInstance(context)
+                .where(UserModel.class)
+                .equalTo("id", id)
+                .findFirst();
+    }
+
+    public void createOrUpdateUser(int id,String name,int age,String gender,float weight) {
+        Realm realm = Realm.getInstance(context);
+        realm.beginTransaction();
+
+        UserModel user = getUser(id);
+
+        if (user == null) {
+            user = realm.createObject(UserModel.class);
+        }
+
+        user.setId(id);
+        user.setName_user(name);
+        user.setAge_user(age);
+        user.setGender_user(gender);
+        user.setWeight_user(weight);
 
         realm.commitTransaction();
 

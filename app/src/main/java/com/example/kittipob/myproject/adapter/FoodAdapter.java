@@ -111,7 +111,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
                         String formattedDate =  new SimpleDateFormat("dd-MM-yyyy").format(c.getTime());
                         Intent intent = new Intent(context,CalculateActivity.class);
 //                        Toast.makeText(context,objFood.getFoodName()+"\t"+valueAmount+"\t หน่วย",Toast.LENGTH_LONG).show();
-                        databaseManager.createOrUpdateOrders(objFood.getId()+1,objFood.getFoodName(),valueAmount,total_tdi,formattedDate);
+                        int setId = databaseManager.getOderFoods().size();
+                        databaseManager.createOrUpdateOrders(setId+1,objFood.getFoodName(),valueAmount,total_tdi,formattedDate);
 
 
                         ((Activity) context).startActivityForResult(intent, CalculateActivity.rg_update);

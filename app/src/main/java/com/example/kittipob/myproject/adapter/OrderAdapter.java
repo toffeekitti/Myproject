@@ -62,7 +62,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     public void onBindViewHolder(OrderAdapter.ViewHolder holder, int position) {
         final OrderModel objOrder = data.get(position);
 
-        holder.order_id.setText(""+position);
+        holder.order_id.setText(""+(position+1));
         holder.order_nFood.setText(objOrder.getnFood());
         holder.order_amFood.setText(""+objOrder.getAmFood());
         holder.order_total.setText(""+objOrder.getTotalCat());

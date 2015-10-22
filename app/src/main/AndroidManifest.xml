@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".information_user"
+            android:name=".Information_user"
             android:label="@string/title_activity_information_user" >
         </activity>
         <activity
@@ -62,7 +62,7 @@
             android:label="@string/title_activity_add_food" >
         </activity>
         <activity
-            android:name=".information_user_edit"
+            android:name=".Information_user_edit"
             android:label="@string/title_activity_information_user_edit" >
         </activity>
         <activity android:name=".ReportDetail" >

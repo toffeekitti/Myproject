@@ -5,21 +5,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
-public class information_user extends AppCompatActivity {
+import com.example.kittipob.myproject.manager.DatabaseManager;
+import com.example.kittipob.myproject.models.UserModel;
+
+public class Information_user extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_user);
 
+        DatabaseManager databaseManager = new DatabaseManager(this);
+        UserModel data = databaseManager.getUser(1);
+
+        TextView nUser = (TextView) findViewById(R.id.nUser);
+        TextView ageUser = (TextView) findViewById(R.id.ageUser);
+        TextView wUesr = (TextView) findViewById(R.id.wUser);
+        TextView genUser = (TextView) findViewById(R.id.genUser);
+
+        if (data != null){
+             nUser.setText(data.getName_user());
+            ageUser.setText("" + data.getAge_user());
+            wUesr.setText("" + data.getWeight_user());
+            genUser.setText(data.getGender_user());
+        }
+
         Button btn_edit=(Button) findViewById(R.id.btn_edituser);
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(information_user.this, information_user_edit.class);
+                Intent intent = new Intent(Information_user.this, Information_user_edit.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -27,8 +46,9 @@ public class information_user extends AppCompatActivity {
         btn_backhome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(information_user.this,MainActivity.class);
+                Intent intent = new Intent(Information_user.this,MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

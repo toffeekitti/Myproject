@@ -5,7 +5,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.kittipob.myproject.information_user_edit">
+    tools:context="com.example.kittipob.myproject.Information_user_edit">
 
     <LinearLayout
         android:orientation="vertical"
@@ -41,7 +41,7 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="175dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content" >
 
                         <TextView
@@ -62,10 +62,10 @@
                         android:layout_height="40dp" >
 
                         <EditText
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/editText"
-                            android:text="นาย A"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:id="@+id/ed_name"
+
                             android:textColor="#666666" />
                     </LinearLayout>
                 </LinearLayout>
@@ -77,8 +77,9 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="175dp"
-                        android:layout_height="40dp" >
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -97,13 +98,20 @@
                         android:layout_height="40dp" >
 
                         <EditText
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/ed_age"
+
+                            android:textColor="#666666" />
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:inputType="date"
-                            android:ems="10"
-                            android:id="@+id/editText4"
-                            android:text="01/12/2015"
-                            android:textColor="#666666" />
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="  ปี"
+                            android:id="@+id/textView222"
+                            android:textColor="#000" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -114,7 +122,8 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="175dp"
+                        android:layout_width="120dp"
+                        android:gravity="center_vertical"
                         android:layout_height="40dp" >
 
                         <TextView
@@ -134,12 +143,13 @@
                         android:layout_height="40dp" >
 
                         <EditText
-                            android:layout_width="50dp"
+                            android:layout_width="60dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/editText2"
-                            android:text="60"
+
+                            android:id="@+id/ed_weight"
+
                             android:textColor="#666666"
-                            android:inputType="number" />
+                            android:inputType="numberDecimal" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -158,8 +168,9 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:layout_width="175dp"
-                        android:layout_height="40dp" >
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -173,16 +184,26 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:layout_width="175dp"
                         android:layout_height="40dp" >
 
-                        <EditText
-                            android:layout_width="50dp"
+                        <RadioButton
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/editText3"
                             android:text="ชาย"
-                            android:textColor="#666666" />
+
+                            android:id="@+id/male"
+                            android:onClick="onRadioButtonClicked"/>
+                        <RadioButton
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="หญิง"
+                            android:id="@+id/female"
+
+                            android:onClick="onRadioButtonClicked"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -208,7 +229,7 @@
                     android:id="@+id/btn_save"
                     android:textSize="20sp"
                     android:layout_marginRight="30dp"
-                    android:background="#000" />
+                     />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -216,7 +237,7 @@
                     android:text="ยกเลิก"
                     android:id="@+id/btn_cancel"
                     android:textSize="20sp"
-                    android:background="#000" />
+                    />
             </LinearLayout>
         </LinearLayout>
 
