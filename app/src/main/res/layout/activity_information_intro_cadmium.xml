@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context="com.example.kittipob.myproject.information_intro_cadmium">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/scrollView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="80dp" />
+        <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" /> <TextView android:text="ความรู้เกี่ยวกับแคดเมียม" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp" />
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

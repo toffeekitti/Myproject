@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CadmiumFOOD</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <color name="red">#eeeeef</color>
+    <string name="title_activity_information_user">information_user</string>
+    <string name="title_activity_calculate">calculate</string>
+    <string name="title_activity_report">report</string>
+    <string name="title_activity_information">information</string>
+    <string name="title_activity_information_introduce_system">information_introduce_system</string>
+    <string name="title_activity_information_main_calculate">information_main_calculate</string>
+    <string name="title_activity_information_intro_cadmium">information_intro_cadmium</string>
+    <string name="title_activity_information_topten_cadmium">information_topten_cadmium</string>
+    <string name="title_activity_food_type_fruit">FoodTypeFruit</string>
+    <string name="title_activity_add_food">addFood</string>
+    <string name="title_activity_food_type_starch">FoodTypeStarch</string>
+    <string name="title_activity_food_type_vegetable">FoodTypeVegetable</string>
+    <string name="title_activity_food_type_meet">FoodTypeMeet</string>
+    <string name="title_activity_food_type_processed">FoodTypeProcessed</string>
+    <string name="title_activity_information_user_edit">information_user_edit</string>
+</resources>
