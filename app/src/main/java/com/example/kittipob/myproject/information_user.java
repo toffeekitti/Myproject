@@ -10,6 +10,11 @@ import android.widget.TextView;
 import com.example.kittipob.myproject.manager.DatabaseManager;
 import com.example.kittipob.myproject.models.UserModel;
 
+import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
+import java.util.logging.SimpleFormatter;
+
 public class Information_user extends AppCompatActivity {
 
     @Override
@@ -24,12 +29,21 @@ public class Information_user extends AppCompatActivity {
         TextView ageUser = (TextView) findViewById(R.id.ageUser);
         TextView wUesr = (TextView) findViewById(R.id.wUser);
         TextView genUser = (TextView) findViewById(R.id.genUser);
+        TextView tdiUser = (TextView) findViewById(R.id.overTDI);
+
+
 
         if (data != null){
              nUser.setText(data.getName_user());
             ageUser.setText("" + data.getAge_user());
             wUesr.setText("" + data.getWeight_user());
             genUser.setText(data.getGender_user());
+
+            float calTDI = (float) (data.getWeight_user()*0.8);
+            String total = new DecimalFormat("#.##").format(calTDI);
+
+            tdiUser.setText(total);
+
         }
 
         Button btn_edit=(Button) findViewById(R.id.btn_edituser);

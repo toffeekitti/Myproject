@@ -39,12 +39,15 @@ public class Information_user_edit extends AppCompatActivity {
         ed_age = (EditText) findViewById(R.id.ed_age);
         ed_weight = (EditText) findViewById(R.id.ed_weight);
 
-        ed_name.setText(user.getName_user());
-        ed_age.setText(""+user.getAge_user());
-        ed_weight.setText(""+user.getWeight_user());
+        if (user!=null) {
 
 
+            ed_name.setText(user.getName_user());
+            ed_age.setText("" + user.getAge_user());
+            ed_weight.setText("" + user.getWeight_user());
 
+
+        }
 
 
         Button btn_save = (Button) findViewById(R.id.btn_save);
