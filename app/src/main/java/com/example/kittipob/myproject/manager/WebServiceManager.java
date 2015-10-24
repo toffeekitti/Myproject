@@ -21,7 +21,7 @@ import org.json.JSONObject;
  */
 public class WebServiceManager {
 
-    private final static String FOOD_URL =  "http://192.168.1.13:8888/api/food";
+    private final static String FOOD_URL =  "http://192.168.215.103:8888/api/food";
 
     final Context context;
     final WebServiceCallbackListener listener;
@@ -61,7 +61,7 @@ public class WebServiceManager {
                                 double foodTDI = foodRaw.getDouble("cd_food");
                                 String foodType = foodRaw.getString("type_food");
                                 String foodAmount = foodRaw.getString("unit_food");
-                                String foodWeight = foodRaw.getString("weight_food");
+                                double foodWeight = foodRaw.getDouble("weight_food");
 
 
                                 databaseManager.createOrUpdateFoods(id, foodName, foodTDI, foodType, foodAmount,foodWeight);

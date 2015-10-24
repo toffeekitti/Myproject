@@ -27,6 +27,7 @@ public class AddFood extends ActionBarActivity {
                 intent.putExtra("type","Starch");
 
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -37,6 +38,7 @@ public class AddFood extends ActionBarActivity {
                 Intent intent=new Intent(AddFood.this,FoodListTypes.class);
                 intent.putExtra("type","Vegetable");
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -47,6 +49,7 @@ public class AddFood extends ActionBarActivity {
                 Intent intent=new Intent(AddFood.this,FoodListTypes.class);
                 intent.putExtra("type","Meet");
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -58,7 +61,7 @@ public class AddFood extends ActionBarActivity {
                 intent.putExtra("type","Fruit");
 
                 startActivity(intent);
-
+                finish();
             }
         });
 
@@ -69,7 +72,7 @@ public class AddFood extends ActionBarActivity {
                 Intent intent=new Intent(AddFood.this,FoodListTypes.class);
                 intent.putExtra("type","Processed Foods");
                 startActivity(intent);
-
+                finish();
             }
         });
     }

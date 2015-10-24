@@ -88,7 +88,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
                 cdfood.setText(objFood.getFoodTDI() + "");
 
                 TextView weightfood = (TextView) customView.findViewById(R.id.textView_weightfood);
-                weightfood.setText(objFood.getFoodWeight());
+                weightfood.setText(objFood.getFoodWeight()+" กรัม");
 
                 TextView unitfood = (TextView) customView.findViewById(R.id.textView_unitfood);
                 unitfood.setText(objFood.getFoodUnit());
@@ -105,18 +105,21 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
                         String x = getAmount.getText().toString();
                         int valueAmount = Integer.parseInt(x);
 
-                        float total_tdi = (float) (valueAmount * objFood.getFoodTDI());
+
+                        // Set Value;
+                        float total_tdi = (float) (valueAmount * objFood.getFoodTDI()*objFood.getFoodWeight());
+                        String amFood = valueAmount + " x " + objFood.getFoodUnit();
                         //  get date
                         Calendar c = Calendar.getInstance();
                         String formattedDate =  new SimpleDateFormat("dd-MM-yyyy").format(c.getTime());
                         Intent intent = new Intent(context,CalculateActivity.class);
 //                        Toast.makeText(context,objFood.getFoodName()+"\t"+valueAmount+"\t หน่วย",Toast.LENGTH_LONG).show();
                         int setId = databaseManager.getOderFoods().size();
-                        databaseManager.createOrUpdateOrders(setId+1,objFood.getFoodName(),valueAmount,total_tdi,formattedDate);
+                        databaseManager.createOrUpdateOrders(setId+1,objFood.getFoodName(),amFood,total_tdi,formattedDate);
 
 
                         ((Activity) context).startActivityForResult(intent, CalculateActivity.rg_update);
-                        ((Activity) context).finish();
+
                     }
                 });
 

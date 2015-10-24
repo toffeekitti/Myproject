@@ -14,8 +14,10 @@ import android.widget.Toast;
 import com.example.kittipob.myproject.manager.DatabaseManager;
 import com.example.kittipob.myproject.manager.WebServiceCallbackListener;
 import com.example.kittipob.myproject.manager.WebServiceManager;
+import com.example.kittipob.myproject.models.ReportModel;
 
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity implements WebServiceCallbackListener {
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements WebServiceCallbac
         box_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, report.class);
+                Intent intent = new Intent(MainActivity.this, ReportActivity.class);
 
                 startActivity(intent);
 
@@ -83,8 +85,18 @@ public class MainActivity extends AppCompatActivity implements WebServiceCallbac
             new WebServiceManager(this,this).requestFood();
 
 
+        //  get date
+        Calendar c = Calendar.getInstance();
+        String formattedDate =  new SimpleDateFormat("dd-MM-yyyy").format(c.getTime());
 
+        // Create Report of to day.
+        DatabaseManager databaseManager = new DatabaseManager(this);
+        ReportModel report = databaseManager.getReport(formattedDate);
 
+        if (report == null){
+            databaseManager.createOrUpdateReports(formattedDate,0.0f,false);
+            Toast.makeText(this,"Create id report to day success!",Toast.LENGTH_SHORT).show();
+        }
 
 
     }

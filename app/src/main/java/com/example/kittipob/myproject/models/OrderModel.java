@@ -12,7 +12,7 @@ public class OrderModel extends RealmObject {
     private int id;
 
     private String nFood;
-    private int amFood;
+    private String amFood;
     private float totalCat;
 
     private String report_id;
@@ -33,11 +33,11 @@ public class OrderModel extends RealmObject {
         this.nFood = nFood;
     }
 
-    public int getAmFood() {
+    public String getAmFood() {
         return amFood;
     }
 
-    public void setAmFood(int amFood) {
+    public void setAmFood(String amFood) {
         this.amFood = amFood;
     }
 

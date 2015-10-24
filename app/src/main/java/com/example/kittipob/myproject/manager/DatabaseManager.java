@@ -4,11 +4,13 @@ import android.content.Context;
 
 import com.example.kittipob.myproject.models.FoodModel;
 import com.example.kittipob.myproject.models.OrderModel;
+import com.example.kittipob.myproject.models.ReportModel;
 import com.example.kittipob.myproject.models.UserModel;
 
 import java.util.List;
 
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -42,7 +44,7 @@ public class DatabaseManager  {
     }
 
 
-    public void createOrUpdateFoods(int id,String foodName,double foodTDI,String foodType,String foodAmount,String foodWieght) {
+    public void createOrUpdateFoods(int id,String foodName,double foodTDI,String foodType,String foodAmount,double foodWieght) {
         Realm realm = Realm.getInstance(context);
         realm.beginTransaction();
 
@@ -85,25 +87,7 @@ public class DatabaseManager  {
                 .contains("report_id", report_id)
                 .findAll();
     }
-    public void createOrUpdateOrders(int id,String nFood,int amFood,float totalCat,String report_id) {
-        Realm realm = Realm.getInstance(context);
-        realm.beginTransaction();
 
-        OrderModel order = getOrderFood(id);
-
-        if (order == null) {
-            order = realm.createObject(OrderModel.class);
-        }
-
-        order.setId(id);
-        order.setnFood(nFood);
-        order.setAmFood(amFood);
-        order.setTotalCat(totalCat);
-        order.setReport_id(report_id);
-
-        realm.commitTransaction();
-
-    }
 
     public List<UserModel> getUsers() {
         return Realm.getInstance(context)
@@ -148,4 +132,61 @@ public class DatabaseManager  {
 
 
     }
+
+    public ReportModel getReport(final String report_id) {
+        return Realm.getInstance(context)
+                .where(ReportModel.class)
+                .equalTo("id", report_id)
+                .findFirst();
+    }
+    public List<ReportModel> getReports() {
+        return Realm.getInstance(context)
+                .where(ReportModel.class)
+                .findAll();
+    }
+
+
+    public void createOrUpdateReports(String id,float total_tdi,boolean status) {
+        Realm realm = Realm.getInstance(context);
+        realm.beginTransaction();
+
+        ReportModel report = getReport(id);
+
+        if (report == null) {
+            report = realm.createObject(ReportModel.class);
+
+        }
+
+        report.setId(id);
+        report.setTotal_tdi(total_tdi);
+        report.setStatus(status);
+
+
+
+
+        realm.commitTransaction();
+
+    }
+    public void createOrUpdateOrders(int id,String nFood,String amFood,float totalCat,String report_id) {
+        Realm realm = Realm.getInstance(context);
+        realm.beginTransaction();
+
+        OrderModel order = getOrderFood(id);
+
+        if (order == null) {
+            order = realm.createObject(OrderModel.class);
+            ReportModel report = getReport(report_id);
+            report.getOrderReport().add(order);
+        }
+
+        order.setId(id);
+        order.setnFood(nFood);
+        order.setAmFood(amFood);
+        order.setTotalCat(totalCat);
+        order.setReport_id(report_id);
+
+        realm.commitTransaction();
+
+    }
+
 }

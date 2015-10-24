@@ -15,7 +15,7 @@ public class FoodModel extends RealmObject {
     private double foodTDI;
     private String foodType;
     private String foodUnit;
-    private String foodWeight;
+    private double foodWeight;
 
     public int getId() {
         return id;
@@ -57,11 +57,11 @@ public class FoodModel extends RealmObject {
         this.foodUnit = foodUnit;
     }
 
-    public String getFoodWeight() {
+    public double getFoodWeight() {
         return foodWeight;
     }
 
-    public void setFoodWeight(String foodWeight) {
+    public void setFoodWeight(double foodWeight) {
         this.foodWeight = foodWeight;
     }
 }

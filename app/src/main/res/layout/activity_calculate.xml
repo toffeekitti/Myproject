@@ -48,7 +48,8 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="40.235"
-                        android:id="@+id/textView20" />
+                        android:textStyle="bold"
+                        android:id="@+id/value_over_tdi" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -100,14 +101,16 @@
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="อาหารที่บริโภค  "
                                     android:id="@+id/textView25"
-                                    android:textSize="13sp" />
+                                    android:textSize="13sp"
+                                    />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="11.000"
-                                    android:id="@+id/textView24" />
+                                    android:textStyle="bold"
+                                    android:id="@+id/value_tdi_today" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -130,26 +133,7 @@
                                     android:layout_height="40dp"
                                     android:gravity="right">
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAppearance="?android:attr/textAppearanceMedium"
-                                        android:text="หรือเท่ากับ  "
-                                        android:id="@+id/textView27" />
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAppearance="?android:attr/textAppearanceMedium"
-                                        android:text="27.50"
-                                        android:id="@+id/textView28" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textAppearance="?android:attr/textAppearanceMedium"
-                                        android:text=" %"
-                                        android:id="@+id/textView29" />
 
                                 </LinearLayout>
                             </LinearLayout>
@@ -184,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="01/01/2558"
-                    android:id="@+id/textView23"
+                    android:id="@+id/dateToday"
                     android:textSize="12sp" />
             </LinearLayout>
 
